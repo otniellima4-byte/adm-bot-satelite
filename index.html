@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#14283d">
+<title>ADM BOT | Satélite — Operação Controle</title>
+<style>
+:root{--navy:#14283d;--navy2:#203d59;--bg:#f2f5f8;--ink:#172536;--muted:#637386;--line:#dce3ea;--white:#fff;--gold:#d5ad58}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+header{background:linear-gradient(135deg,var(--navy),var(--navy2));color:white;padding:28px 18px 24px}
+.wrap{max-width:980px;margin:auto}.brand{display:flex;align-items:center;gap:14px}.emblem{width:52px;height:52px;border:2px solid var(--gold);border-radius:14px;display:grid;place-items:center;font-size:27px}
+h1{font-size:25px;margin:0;letter-spacing:.06em}header p{margin:5px 0 0;color:#d5e0ea;font-size:12px;letter-spacing:.08em}
+main{max-width:980px;margin:22px auto;padding:0 14px}.status{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.pill{border:1px solid var(--line);background:white;border-radius:30px;padding:6px 11px;font-size:12px;color:var(--muted)}
+nav{display:flex;gap:8px;overflow:auto;margin:14px 0}.tab{border:1px solid var(--line);background:white;border-radius:9px;padding:10px 14px;font-weight:650;color:var(--ink);cursor:pointer;white-space:nowrap}.tab.active{background:var(--navy);border-color:var(--navy);color:white}
+.panel{background:white;border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:14px;box-shadow:0 3px 12px #14283d0a}
+h2{font-size:19px;margin:0 0 12px}h3{font-size:15px;margin:0 0 8px}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.metric{background:#f7f9fb;border:1px solid var(--line);padding:15px;border-radius:11px}.metric strong{display:block;font-size:22px;color:var(--navy)}
+ul,ol{padding-left:22px}li{margin:7px 0}textarea,input{width:100%;padding:11px;border:1px solid #cbd5df;border-radius:9px;font:inherit;color:var(--ink);background:white}textarea{min-height:115px;resize:vertical}
+button{border:0;border-radius:9px;background:var(--navy);color:white;padding:10px 14px;font:600 14px system-ui;cursor:pointer}button.secondary{background:#e9eef3;color:var(--navy)}button.danger{background:#8b3030}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.notice{border-left:4px solid var(--gold);background:#fbf8f0;padding:12px;border-radius:7px;white-space:pre-wrap}
+.item{padding:12px 0;border-bottom:1px solid var(--line)}.item:last-child{border:0}.hidden{display:none}.small{font-size:12px}.foot{text-align:center;color:var(--muted);font-size:11px;padding:16px}
+label{display:block;font-weight:650;margin:12px 0 6px}
+@media(max-width:520px){h1{font-size:20px}.panel{padding:16px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+ <div class="brand"><div class="emblem">🛡️</div><div><h1>ADM BOT</h1><p>SATÉLITE | OPERAÇÃO CONTROLE</p></div></div>
+</div></header>
+<main>
+ <div class="status"><span class="pill">PAINEL DEMONSTRATIVO</span><span class="pill">VERSÃO 1.0</span><span class="pill">NÃO CONECTADO AO WHATSAPP</span></div>
+ <nav aria-label="Navegação">
+  <button class="tab active" data-tab="inicio">Início</button><button class="tab" data-tab="regras">Regras</button><button class="tab" data-tab="avisos">Avisos</button><button class="tab" data-tab="moderacao">Moderação</button>
+ </nav>
+ <section id="inicio" class="view">
+  <div class="panel"><h2>Central administrativa</h2><p class="muted">Área de apoio aos administradores do grupo de vigilantes e colaboradores do Grupo Satélite.</p>
+   <div class="grid"><div class="metric"><strong>07</strong>Regras aprovadas</div><div class="metric"><strong>04</strong>Comandos planejados</div><div class="metric"><strong>Nível 2</strong>Moderação assistida</div></div>
+  </div>
+  <div class="panel"><h2>Comandos planejados</h2>
+   <div class="item"><b>/regras</b><div class="muted small">Consultar o regulamento do grupo.</div></div>
+   <div class="item"><b>/ajuda</b><div class="muted small">Exibir a lista de comandos.</div></div>
+   <div class="item"><b>/aviso</b><div class="muted small">Preparar comunicado administrativo.</div></div>
+   <div class="item"><b>/spam</b><div class="muted small">Orientações sobre mensagens repetitivas.</div></div>
+  </div>
+ </section>
+ <section id="regras" class="view hidden">
+  <div class="panel"><h2>Regulamento oficial</h2><ol id="rules">
+   <li>Respeitar todos os integrantes.</li><li>Compartilhar informações pertinentes ao serviço.</li><li>Evitar spam e mensagens desnecessárias.</li><li>Não divulgar informações internas sem autorização.</li><li>Manter linguagem profissional.</li><li>Respeitar as orientações da supervisão.</li><li>Comunicar ocorrências com clareza e responsabilidade.</li>
+  </ol><div class="actions"><button id="copyRules">Copiar regulamento</button></div></div>
+ </section>
+ <section id="avisos" class="view hidden">
+  <div class="panel"><h2>Central de comunicados</h2><label for="noticeTitle">Título</label><input id="noticeTitle" value="COMUNICADO ADMINISTRATIVO"><label for="noticeBody">Mensagem</label><textarea id="noticeBody">Atenção, integrantes do grupo SATÉLITE | OPERAÇÃO CONTROLE.
+
+Solicitamos atenção às orientações administrativas e o cumprimento das regras de comunicação.
+
+ADM BOT — Administração e Controle.</textarea><div class="actions"><button id="copyNotice">Copiar comunicado</button><button class="secondary" id="resetNotice">Restaurar modelo</button></div><p class="muted small">O painel prepara e copia o texto. O envio ao grupo continua sendo feito por um administrador.</p></div>
+ </section>
+ <section id="moderacao" class="view hidden">
+  <div class="panel"><h2>Moderação assistida</h2><div class="notice"><b>Política:</b> identificar mensagens repetitivas, correntes e propagandas; orientar o participante; encaminhar reincidências aos administradores. Nenhuma expulsão ou punição automática.</div>
+   <h3 style="margin-top:18px">Modelo de orientação</h3><textarea id="warning">⚠️ ORIENTAÇÃO ADMINISTRATIVA
+
+Pedimos que evite mensagens repetitivas e conteúdos que não estejam relacionados à finalidade do grupo.
+
+Agradecemos a colaboração.
+
+ADM BOT — Administração e Controle.</textarea><div class="actions"><button id="copyWarning">Copiar orientação</button></div>
+  </div>
+ </section>
+ <div class="foot">ADM BOT • SATÉLITE | OPERAÇÃO CONTROLE • Protótipo local v1.0</div>
+</main>
+<script>
+const tabs=[...document.querySelectorAll('.tab')],views=[...document.querySelectorAll('.view')];
+tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.classList.toggle('active',x===t));views.forEach(v=>v.classList.toggle('hidden',v.id!==t.dataset.tab));}));
+async function copy(text){try{await navigator.clipboard.writeText(text);alert('Texto copiado.');}catch(e){alert('Não foi possível copiar automaticamente. Selecione e copie o texto manualmente.');}}
+document.getElementById('copyRules').onclick=()=>copy('REGULAMENTO — SATÉLITE | OPERAÇÃO CONTROLE\\n'+[...document.querySelectorAll('#rules li')].map((x,i)=>(i+1)+'. '+x.textContent).join('\\n'));
+document.getElementById('copyNotice').onclick=()=>copy('🛡️ '+document.getElementById('noticeTitle').value+'\\n\\n'+document.getElementById('noticeBody').value);
+document.getElementById('copyWarning').onclick=()=>copy(document.getElementById('warning').value);
+document.getElementById('resetNotice').onclick=()=>{document.getElementById('noticeTitle').value='COMUNICADO ADMINISTRATIVO';document.getElementById('noticeBody').value='Atenção, integrantes do grupo SATÉLITE | OPERAÇÃO CONTROLE.\\n\\nSolicitamos atenção às orientações administrativas e o cumprimento das regras de comunicação.\\n\\nADM BOT — Administração e Controle.';};
+</script>
+</body></html>
